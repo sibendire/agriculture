@@ -49,6 +49,7 @@
 				Connect with farmers, suppliers, and buyers seamlessly.<br> 
 				Our user-friendly interface and robust security ensure endless opportunities for growth. 
 				<br>Join us and embark on a journey of innovation and prosperity in agriculture.</p>
+				
 
 				<?php
 					if(isset($_GET['n']) AND $_GET['n'] == 1):

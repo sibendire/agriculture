@@ -48,7 +48,7 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['pid']) && isset($_POST
             // Send email notification to the farmer
             sendFarmerNotification($product['femail'], $product['fname'], $quantity, $newPnumber, $pid);
             
-            echo "<script>alert('Order has been placed successfully and confirmation email sent.')</script>";
+            echo "<script>alert('Order has been placed successfully and confirmation email sent.'); window.location. href=inedx.php;</script>";
         } else {
             echo "<script>alert('Error in placing order. Please try again.')</script>";
         }

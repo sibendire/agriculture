@@ -176,7 +176,7 @@ if (count($cartItems) > 0) {
 
                 <!-- Submit Button -->
                 <center>
-                    <input type="submit" value="Confirm Order" 
+                    <input type="submit" value="Place Order" 
                         style="width: 50%; background-color: #007bff; color: #fff; cursor: pointer; padding: 12px; border: none; border-radius: 4px; font-size: 16px;">
                 </center>
             </form>

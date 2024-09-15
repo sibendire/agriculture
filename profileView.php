@@ -60,9 +60,9 @@
                 </div>
             </div>
             <div class="row" style="margin-top: 30px;">
-                <!-- <div class="col-sm-4">
+                 <div class="col-sm-4">
                     <a href="profileEdit.php" class="btn btn-primary btn-block" style="text-decoration: none; font-size: 16px; padding: 12px; border-radius: 30px;">Edit Profile</a>
-                </div> -->
+                </div> 
                 <div class="col-sm-4">
                     <a href="uploadProduct.php" class="btn btn-primary btn-block" style="text-decoration: none; font-size: 16px; padding: 12px; border-radius: 30px;">Upload Product</a>
                 </div>
