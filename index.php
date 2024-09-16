@@ -124,7 +124,11 @@
 
 							<div style="align: left">
 							<blockquote><?php echo "Type : ".$row['pcat'].'';?><br><?php echo "Price : ".$row['price'].' /-';?><br></blockquote>
+							
+							<button onclick="window.location.href='addToCart.php?pid=<?php echo $row['pid']; ?>'">Add To Cart</button>
 
+							
+                            
 						</section>
 						</div>
 
@@ -269,60 +273,63 @@
     <div class="container">
 
 <section>
-							<h3>SignUp</h3>
-							<form method="post" action="Login/signUp.php">
-								<center>
-								<div class="row uniform">
-									<div class="3u 12u$(xsmall)">
-										<input type="text" name="name" id="name" value="" placeholder="Name" required/>
-									</div>
-									<div class="3u 12u$(xsmall)">
-										<input type="text" name="uname" id="uname" value="" placeholder="UserName" required/>
-									</div>
-								</div>
-								<div class="row uniform">
-									<div class="3u 12u$(xsmall)">
-										<input type="text" name="mobile" id="mobile" value="" placeholder="Mobile Number" required/>
-									</div>
+<h3>SignUp</h3>
+<form method="post" action="Login/signUp.php" enctype="multipart/form-data">
+    <center>
+        <div class="row uniform">
+            <div class="3u 12u$(xsmall)">
+                <input type="text" name="name" id="name" placeholder="Name" required />
+            </div>
+            <div class="3u 12u$(xsmall)">
+                <input type="text" name="uname" id="uname" placeholder="UserName" required />
+            </div>
+        </div>
+        <div class="row uniform">
+            <div class="3u 12u$(xsmall)">
+                <input type="text" name="mobile" id="mobile" placeholder="Mobile Number" required />
+            </div>
+            <div class="3u 12u$(xsmall)">
+                <input type="email" name="email" id="email" placeholder="Email" required />
+            </div>
+        </div>
+        <div class="row uniform">
+            <div class="3u 12u$(xsmall)">
+                <input type="password" name="password" id="password" placeholder="Password" required />
+            </div>
+            <div class="3u 12u$(xsmall)">
+                <input type="password" name="pass" id="pass" placeholder="Retype Password" required />
+            </div>
+        </div>
+        <div class="row uniform">
+            <div class="6u 12u$(xsmall)">
+                <input type="text" name="addr" id="addr" placeholder="Address" style="width:80%" required />
+            </div>
+        </div>
+        <div class="row uniform">
+            <label for="picName">Upload your profile photo</label>
+            <div class="6u 12u$(xsmall)">
+                <input type="file" name="picName" id="picName" style="width:80%" required />
+            </div>
+        </div>
+        <div class="row uniform">
+            <p><b>Category: </b></p>
+            <div class="3u 12u$(small)">
+                <select id="farmer" name="category">
+                    <option value="1">Farmer</option>
+                </select>
+            </div>
+        </div>
+        <div class="row uniform">
+            <div class="3u 12u$(small)">
+                <input type="submit" value="Submit" name="submit" class="special" />
+            </div>
+            <div class="3u 12u$(small)">
+                <input type="reset" value="Reset" name="reset" />
+            </div>
+        </div>
+    </center>
+</
 
-									<div class="3u 12u$(xsmall)">
-										<input type="email" name="email" id="email" value="" placeholder="Email" required/>
-									</div>
-								</div>
-								<div class="row uniform">
-									<div class="3u 12u$(xsmall)">
-			                            <input type="password" name="password" id="password" value="" placeholder="Password" required/>
-			                        </div>
-			                        <div class="3u 12u$(xsmall)">
-			                            <input type="password" name="pass" id="pass" value="" placeholder="Retype Password" required/>
-			                        </div>
-								</div>
-								<div class="row uniform">
-									<div class="6u 12u$(xsmall)">
-										<input type="text" name="addr" id="addr" value="" placeholder="Address" style="width:80%" required/>
-									</div>
-								</div>
-								<div class="row uniform">
-									<p>
-			                            <b>Category : </b>
-			                        </p>
-			                         <div class="3u 12u$(small)">
-				                                <select type="text" id="farmer" name="category">
-													<option value="1">Farmer</option>
-													<!-- <option value="0">Buyer</option> -->
-												</select>	
-				                        </div>
-								</div>
-								<div class="row uniform">
-									<div class="3u 12u$(small)">
-										<input type="submit" value="Submit" name="submit" class="special" /></li>
-									</div>
-									<div class="3u 12u$(small)">
-										<input type="reset" value="Reset" name="reset"/></li>
-									</div>
-								</div>
-							</center>
-							</form>
 						</section>
 
     </div>
