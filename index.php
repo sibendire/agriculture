@@ -308,7 +308,7 @@
         <div class="row uniform">
             <label for="picName">Upload your profile photo</label>
             <div class="6u 12u$(xsmall)">
-                <input type="file" name="picName" id="picName" style="width:80%" required />
+                <input type="file" name="profilePic" id="picName" style="width:80%" required />
             </div>
         </div>
         <div class="row uniform">
@@ -328,13 +328,8 @@
             </div>
         </div>
     </center>
-</
+</form>
 
-						</section>
-
-    </div>
-    </div>
-  </form>
 </div>
 
 

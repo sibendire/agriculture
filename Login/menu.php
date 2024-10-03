@@ -27,7 +27,7 @@
 						<li><a href="../market.php"><span class="glyphicon glyphicon-grain"> Upload product</a></li>
 						<li><a href="../myCart.php"><span class="glyphicon glyphicon-shopping-cart"> </a></li>
 						<li><a href="<?= $link; ?>"><span class="<?php echo $logo; ?>"></span><?php echo" ". $loginProfile; ?></a></li>
-						<li><a href="../blogView.php"><span class="glyphicon glyphicon-comment"> BLOG</a></li>
+						<!-- <li><a href="../blogView.php"><span class="glyphicon glyphicon-comment"> BLOG</a></li> -->
 					</ul>
 				</nav>
 			</header>
