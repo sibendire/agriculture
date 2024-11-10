@@ -1,11 +1,15 @@
 <?php
     session_start();
 
+    // Check if user is logged in
     if (!isset($_SESSION['logged_in']) || $_SESSION['logged_in'] != 1) {
         $_SESSION['message'] = "You need to log in to view this page!";
         header("Location: Login/error.php");
         exit();
     }
+
+    // Default profile image if none is provided
+    $profileImage = !empty($_SESSION['picName']) ? htmlspecialchars($_SESSION['picName']) : 'default.jpg';
 ?>
 
 <!DOCTYPE html>
@@ -16,8 +20,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Profile: <?php echo htmlspecialchars($_SESSION['Username']); ?></title>
     
+    <!-- Bootstrap CSS -->
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    
     <!-- Custom CSS -->
     <link rel="stylesheet" href="login.css">
     <link rel="stylesheet" href="css/skel.css">
@@ -120,7 +124,10 @@
 
     <div class="profile-container">
         <div class="profile-header">
-            <img src="<?php echo 'images/profileImages/' . htmlspecialchars($_SESSION['picName']) . '?' . mt_rand(); ?>" alt="Profile Image">
+            <!-- Display Profile Image -->
+            <img src="images/profileImages/<?php echo $profileImage; ?>?<?php echo mt_rand(); ?>" alt="Profile Image">
+            
+            <!-- Display User Name and Username -->
             <h2><?php echo htmlspecialchars($_SESSION['Name']); ?></h2>
             <h4>@<?php echo htmlspecialchars($_SESSION['Username']); ?></h4>
         </div>

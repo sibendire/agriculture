@@ -46,9 +46,10 @@ if ($_SERVER['REQUEST_METHOD'] == "POST" && isset($_POST['pid']) && isset($_POST
             sendOrderEmail($email, $name, $pid, $quantity, $totalCost);
 
             // Send email notification to the farmer
-            sendFarmerNotification($product['femail'], $product['fname'], $quantity, $newPnumber, $pid);
+            sendFarmerNotification($product['femail'], $product['fname'], $quantity, $newPnumber, $pid, $name, $mobile,  $addr);
             
-            echo "<script>alert('Order has been placed successfully and confirmation email sent.'); window.location. href=inedx.php;</script>";
+            header("Location: index.php");
+            exit;
         } else {
             echo "<script>alert('Error in placing order. Please try again.')</script>";
         }
@@ -79,7 +80,7 @@ function sendOrderEmail($email, $name, $pid, $quantity, $totalCost) {
         $mail->Subject = 'AgroCulture: Order Confirmation';
         $mail->Body = "Dear $name,<br><br>Just a quick note to say we truly appreciate your choice to shop 
                       with us.<br>
-                      It's customers like you that allow us to do what we love every day.:<br>
+                      It's customers like you who enable us to keep our businesses running .:<br>
                       <strong>Product ID:</strong> $pid<br>
                       <strong>Quantity:</strong> $quantity<br>
                       <strong>Total Cost:</strong> $totalCost<br><br>
@@ -92,7 +93,7 @@ function sendOrderEmail($email, $name, $pid, $quantity, $totalCost) {
     }
 }
 
-function sendFarmerNotification($farmerEmail, $farmerName, $quantitySold, $remainingQuantity, $pid) {
+function sendFarmerNotification($farmerEmail, $farmerName, $quantitySold, $remainingQuantity, $pid, $name, $mobile,  $addr) {
     $mail = new PHPMailer(true);
     try {
         // Server settings
@@ -116,7 +117,10 @@ function sendFarmerNotification($farmerEmail, $farmerName, $quantitySold, $remai
                        The product you uploaded with ID $pid has been ordered.<br>
                       <strong>Product Quantity Ordered for:</strong> $quantitySold<br>
                       <strong>Remaining Quantity in stock:</strong> $remainingQuantity<br><br>
-                      You are reminded to reply to this email to guide the buyer when your to deliver his product on time.<br>
+                      <strong>Ordered by:</strong> $name<br><br>
+                     <strong>Phone Number:</strong> $mobile<br><br>
+                     <strong>Buyer's location:</strong> $addr<br><br>
+                      You are reminded to call or email  the buyer when your to deliver his product on time.<br>
                       Best regards,<br>AgroCulture Team";
 
         $mail->send();
