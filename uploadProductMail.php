@@ -125,7 +125,7 @@ function sendProductUploadEmail($email,$name, $pnumber, $productName, $productPr
         header("Location: Login/error.php");
         exit();
     }
-    header("Location: market.php");
+    header("Location: index.php");
     exit();
 }
 
