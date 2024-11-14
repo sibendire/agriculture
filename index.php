@@ -305,12 +305,12 @@
                 <input type="text" name="addr" id="addr" placeholder="Address" style="width:80%" required />
             </div>
         </div>
-        <div class="row uniform">
+        <!-- <div class="row uniform">
             <label for="picName">Upload your profile photo</label>
             <div class="6u 12u$(xsmall)">
                 <input type="file" name="profilePic" id="picName" style="width:80%" required />
             </div>
-        </div>
+        </div> -->
         <div class="row uniform">
             <p><b>Category: </b></p>
             <div class="3u 12u$(small)">

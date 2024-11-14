@@ -59,8 +59,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         if (isset($_SESSION['Email']) && !empty($_SESSION['Email']) ||isset($_SESSION['Name']) && !empty($_SESSION['Name'])) {
             $email = $_SESSION['Email'];
             $name = $_SESSION['Name'];
-            sendProductUploadEmail($email,$name, $pnumber, $productName, $productPrice, $picDestination); // Pass the image path
-        } else {
+            sendProductUploadEmail($email,$name, $pnumber, $productName, $productPrice, $picDestination); 
+            
             $_SESSION['message'] = "Unable to retrieve your email. Please contact support.";
             header("Location: Login/error.php");
             exit();
@@ -95,10 +95,10 @@ function sendProductUploadEmail($email,$name, $pnumber, $productName, $productPr
         
 
         // Attach the product image
-        $mail->addAttachment($picPath);  // Attach the product image file
+        $mail->addAttachment($picPath);  
 
         // Embed the image in the email body
-        $mail->AddEmbeddedImage($picPath, 'product_image');  // Embed image in the email
+        $mail->AddEmbeddedImage($picPath, 'product_image');  
 
         // Content
         $mail->isHTML(true);

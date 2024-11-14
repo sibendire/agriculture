@@ -38,7 +38,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['id'] = $User['fid'];
                     $_SESSION['Hash'] = $User['fhash'];
                     $_SESSION['Password'] = $User['fpassword'];
-                    $_SESSION['Email'] = $User['femail']; // Store farmer's email
+                    $_SESSION['Email'] = $User['femail']; 
                     $_SESSION['Name'] = $User['fname'];
                     $_SESSION['Username'] = $User['fusername'];
                     $_SESSION['Mobile'] = $User['fmobile'];
@@ -54,7 +54,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['id'] = $User['bid'];
                     $_SESSION['Hash'] = $User['bhash'];
                     $_SESSION['Password'] = $User['bpassword'];
-                    $_SESSION['Email'] = $User['bemail']; // Store buyer's email
+                    $_SESSION['Email'] = $User['bemail']; 
                     $_SESSION['Name'] = $User['bname'];
                     $_SESSION['Username'] = $User['busername'];
                     $_SESSION['Mobile'] = $User['bmobile'];
