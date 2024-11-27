@@ -74,13 +74,13 @@ if (count($cartItems) > 0) {
                                     <strong>Mobile:</strong> <?php echo $row['farmer_mobile']; ?><br>
                                     <strong>Email:</strong> <?php echo $row['farmer_email']; ?><br>
                                     <strong>Address:</strong> <?php echo $row['farmer_address']; ?><br>
+                                    <strong>Prodct info:</strong> <?php echo $row['pinfo']; ?><br>
                                 </p>
-                                <a href="removeFromCart.php?pid=<?php echo $row['pid']; ?>" class="btn btn-danger" style="margin-top: 10px;">Remove</a>
-                                <a href="index.php" 
-       class="btn btn-secondary" 
-       style="flex: 1; padding: 12px 0; background-color: #6c757d; color: #fff; border: none; border-radius: 5px; text-decoration: none; text-align: center; width: 30%;">
-       Back
-    </a>
+                                <a href="removeFromCart.php?pid=<?php echo $row['pid']; ?>" class="btn custom-btn btn-danger">Remove</a>
+<a href='myCart.php?pid=<?php echo $row['pid']; ?>' class="btn custom-btn btn-primary">Add to Cart</a>
+<a href="index.php" class="btn custom-btn btn-secondary">Back</a>
+<a href="productEdit.php" class="btn custom-btn btn-secondary">Edit</a>
+
                             </div>
                         </div>
                     </div>

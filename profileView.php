@@ -150,6 +150,9 @@
                 <a href="uploadProduct.php" class="btn btn-primary btn-custom btn-primary-custom">Upload Product</a>
             </div>
             <div class="col-md-4">
+                <a href="productEdit.php" class="btn btn-primary btn-custom btn-primary-custom">Edit Product</a>
+            </div>
+            <div class="col-md-4">
                 <a href="Login/logout.php" class="btn btn-danger btn-custom btn-danger-custom">Log Out</a>
             </div>
         </div>

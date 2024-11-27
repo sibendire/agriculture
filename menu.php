@@ -25,7 +25,7 @@
 				<nav id="nav">
 					<ul>
 						<li><a href="index.php"><span class="glyphicon glyphicon-home"></span> Home</a></li>
-						<li><a href="uploadProduct.php"><span class="glyphicon glyphicon-grain"> Upload product</a></li>
+						<!--<li><a href="uploadProduct.php"><span class="glyphicon glyphicon-grain"> Upload product</a></li> -->
 						<li><a href="myCart.php"><span class="glyphicon glyphicon-shopping-cart"> Buy Now</a></li>
 						<li><a href="<?= $link; ?>"><span class="<?php echo $logo; ?>"></span><?php echo" ". $loginProfile; ?></a></li>
 						<!-- <li><a href="blogView.php"><span class="glyphicon glyphicon-comment"> BLOG</a></li> -->
