@@ -116,7 +116,7 @@
 							<div class="col-md-4">
 							<section>
 							<strong><h2 class="title" style="color:black; "><?php echo $row['product'].'';?></h2></strong>
-							<a href="myCart.php?pid=<?php echo $row['pid'] ;?>" > <img class="image fit" src="<?php echo $picDestination;?>" height="220px;"  /></a>
+							<a href="review.php?pid=<?php echo $row['pid'] ;?>" > <img class="image fit" src="<?php echo $picDestination;?>" height="220px;"  /></a>
                             
                           
 							<div style="align: left">
@@ -125,9 +125,8 @@
 							<div style="align: left">
 							<blockquote><?php echo "Type : ".$row['pcat'].'';?><br><?php echo "Price : ".$row['price'].' /-';?><br></blockquote>
 							
-							<button onclick="window.location.href='myCart.php?pid=<?php echo $row['pid']; ?>'">Product Details</button>
-
-                        	<a href="productEdit.php?pid=<?php echo $row['pid']; ?>" class="btn custom-btn btn-secondary">Edit</a>
+							<button onclick="window.location.href='review.php?pid=<?php echo $row['pid']; ?>'">Product Details</button>
+							<a href="productEdit.php?pid=<?php echo $row['pid']; ?>" class="btn custom-btn btn-secondary">Edit</a>
 							<a href="deleteproduct.php?pid=<?php echo $row['pid']; ?>" class="btn custom-btn btn-secondary">Delete</a>
 
 
@@ -247,7 +246,7 @@
 				                        <div class="3u 12u$(small)"> 
 												<select type="text" id="farmer" name="category">
 													<option value="1">Farmer</option>
-													<option value="0">Buyer</option>
+													<!-- <option value="0">Buyer</option> -->
 												</select>	
 				                        </div>
 				                        

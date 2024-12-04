@@ -29,7 +29,7 @@
 <!-- Modal Form -->
 <div id="id01" class="modal-content animate">
     <div class="imgcontainer">
-        <span onclick="document.getElementById('id01').style.display='none'; window.location.href='index.php';" class="close" title="Close Modal">&times;</span>
+        <span onclick="document.getElementById('id01').style.display='none'; window.location.href='index1.php';" class="close" title="Close Modal">&times;</span>
     </div>
 
     <div class="container">
@@ -69,7 +69,7 @@
         var modal = document.getElementById('id01');
         if (event.target == modal || event.target.className == 'close') {
             modal.style.display = "none"; 
-            window.location.href = 'index.php'; 
+            window.location.href = 'index1.php'; 
         }
     }
     

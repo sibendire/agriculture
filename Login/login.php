@@ -118,7 +118,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="3u 12u$(small)"> 
                 <select id="category" name="category">
                     <option value="1">Farmer</option>
-                    <!-- <option value="0">Buyer</option> -->
+                    <option value="0">Buyer</option>
                 </select>	
             </div>
         </div>
