@@ -26,13 +26,29 @@ if (isset($_GET['pid'])) {
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Edit Product</title>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="style.css">
-</head>
+		<meta charset="UTF-8">
+		<title>AgroCulture</title>
+		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+		<meta name="description" content="" />
+		<meta name="keywords" content="" />
+		<link href="bootstrap\css\bootstrap.min.css" rel="stylesheet">
+		<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+        <script src="bootstrap\js\bootstrap.min.js"></script>
+
+		<link rel="stylesheet" href="login.css"/>
+		<link rel="stylesheet" type="text/css" href="indexFooter.css">
+		<script src="js/jquery.min.js"></script>
+		<script src="js/skel.min.js"></script>
+		<script src="js/skel-layers.min.js"></script>
+		<script src="js/init.js"></script>
+		<noscript>
+			<link rel="stylesheet" href="css/skel.css" />
+			<link rel="stylesheet" href="css/style.css" />
+			<link rel="stylesheet" href="css/style-xlarge.css" />
+		</noscript>
+		<script src="https://cdn.ckeditor.com/4.8.0/full/ckeditor.js"></script>
+	
+	</head>
 <body>
     <?php require 'menu.php'; ?>
 

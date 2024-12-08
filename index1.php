@@ -1,27 +1,5 @@
 <?php session_start();
-	require 'db.php'; 
-
-
-// Check if a product ID is provided via GET request
-if (isset($_GET['pid'])) {
-    $pid = $_GET['pid'];
-
-    // Initialize the cart array if it doesn't exist
-    if (!isset($_SESSION['cart'])) {
-        $_SESSION['cart'] = array();
-    }
-
-    // Add the product ID to the cart, avoiding duplicates
-    if (!in_array($pid, $_SESSION['cart'])) {
-        $_SESSION['cart'][] = $pid;
-    }
-
-    // Redirect to the cart page
-    header('Location: myCart.php');
-    exit();
-}
-
-	?>
+	require 'db.php'; ?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -138,7 +116,7 @@ if (isset($_GET['pid'])) {
 							<div class="col-md-4">
 							<section>
 							<strong><h2 class="title" style="color:black; "><?php echo $row['product'].'';?></h2></strong>
-							<a href="addToCart.php?pid=<?php echo $row['pid'] ;?>" > <img class="image fit" src="<?php echo $picDestination;?>" height="220px;"  /></a>
+							<a href="review.php?pid=<?php echo $row['pid'] ;?>" > <img class="image fit" src="<?php echo $picDestination;?>" height="220px;"  /></a>
                             
                           
 							<div style="align: left">
@@ -146,18 +124,11 @@ if (isset($_GET['pid'])) {
 
 							<div style="align: left">
 							<blockquote><?php echo "Type : ".$row['pcat'].'';?><br><?php echo "Price : ".$row['price'].' /-';?><br></blockquote>
-							<!--  -->
-                          
-
-                           <a href="addToCart.php?pid=<?php echo $row['pid']; ?>" class="btn custom-btn btn-primary">Product Detail</a>
+							
+							<a href="addToCart.php?pid=<?php echo $row['pid']; ?>" class="btn custom-btn btn-primary">Product Detail</a>
 							<a href="productEdit.php?pid=<?php echo $row['pid']; ?>" class="btn custom-btn btn-secondary">Edit</a>
 							<a href="deleteproduct.php?pid=<?php echo $row['pid']; ?>" class="btn custom-btn btn-danger">Delete</a>
-
-
-
-
-							
-                            
+  
 						</section>
 						</div>
 

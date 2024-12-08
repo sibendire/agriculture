@@ -2,11 +2,19 @@
 session_start();
 require 'db.php';
 
+// Initialize the cart if not already set
+if (!isset($_SESSION['cart'])) {
+    $_SESSION['cart'] = array();
+}
+
+// Check if cart is empty
 $cartItems = isset($_SESSION['cart']) ? $_SESSION['cart'] : array();
 
 if (count($cartItems) > 0) {
+    // Generate placeholders for the SQL query
     $placeholders = implode(',', array_fill(0, count($cartItems), '?'));
-    // Assuming the correct foreign key column in fproduct table is 'fid'
+
+    // Query to fetch product details from fproduct table
     $sql = "
         SELECT fproduct.*, 
                farmer.fname AS farmer_name, 
@@ -17,13 +25,14 @@ if (count($cartItems) > 0) {
         JOIN farmer ON fproduct.fid = farmer.fid 
         WHERE fproduct.pid IN ($placeholders)
     ";
-    
+
     $stmt = $conn->prepare($sql);
 
     if ($stmt === false) {
         die('Error preparing statement: ' . $conn->error);
     }
 
+    // Bind the cart item product IDs to the statement
     $stmt->bind_param(str_repeat('i', count($cartItems)), ...$cartItems);
     $stmt->execute();
     $result = $stmt->get_result();
@@ -31,6 +40,7 @@ if (count($cartItems) > 0) {
     $result = null;
 }
 ?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -41,17 +51,16 @@ if (count($cartItems) > 0) {
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="login.css"/>
-		<script src="js/jquery.min.js"></script>
-		<script src="js/skel.min.js"></script>
-		<script src="js/skel-layers.min.js"></script>
-		<script src="js/init.js"></script>
-		<noscript>
-			<link rel="stylesheet" href="css/skel.css" />
-			<link rel="stylesheet" href="css/style.css" />
-			<link rel="stylesheet" href="css/style-xlarge.css" />
-		</noscript>
-		<link rel="stylesheet" href="indexfooter.css" />
-    
+    <script src="js/jquery.min.js"></script>
+    <script src="js/skel.min.js"></script>
+    <script src="js/skel-layers.min.js"></script>
+    <script src="js/init.js"></script>
+    <noscript>
+        <link rel="stylesheet" href="css/skel.css" />
+        <link rel="stylesheet" href="css/style.css" />
+        <link rel="stylesheet" href="css/style-xlarge.css" />
+    </noscript>
+    <link rel="stylesheet" href="indexfooter.css" />
 </head>
 <body style="background-color: #f7f7f7; padding: 20px;">
     <?php require 'menu.php'; ?>
@@ -74,13 +83,12 @@ if (count($cartItems) > 0) {
                                     <strong>Mobile:</strong> <?php echo $row['farmer_mobile']; ?><br>
                                     <strong>Email:</strong> <?php echo $row['farmer_email']; ?><br>
                                     <strong>Address:</strong> <?php echo $row['farmer_address']; ?><br>
-                                    <strong>Prodct info:</strong> <?php echo $row['pinfo']; ?><br>
+                                    <strong>Product Info:</strong> <?php echo $row['pinfo']; ?><br>
                                 </p>
                                 <a href="removeFromCart.php?pid=<?php echo $row['pid']; ?>" class="btn custom-btn btn-danger">Remove</a>
-<a href='myCart.php?pid=<?php echo $row['pid']; ?>' class="btn custom-btn btn-primary">Add to Cart</a>
-<a href="index.php" class="btn custom-btn btn-secondary">Back</a>
-<a href="productEdit.php" class="btn custom-btn btn-secondary">Edit</a>
-
+                                <a href='myCart.php?pid=<?php echo $row['pid']; ?>' class="btn custom-btn btn-primary">Add to Cart</a>
+                                <a href="index.php" class="btn custom-btn btn-secondary">Back</a>
+                                <!--  -->
                             </div>
                         </div>
                     </div>
@@ -91,5 +99,4 @@ if (count($cartItems) > 0) {
         <?php endif; ?>
     </div>
 </body>
-
 </html>
