@@ -9,6 +9,12 @@ function dataFilter($data) {
     return $data;
 }
 
+// Redirect user if already logged in
+if (isset($_SESSION['logged_in']) && $_SESSION['logged_in'] == true) {
+    header("Location: profile.php");  // Redirect to profile or another page
+    exit();
+}
+
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $username = dataFilter($_POST['uname']);
     $password = $_POST['pass'];
@@ -72,16 +78,16 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                     $_SESSION['picName'] = "profile" . $_SESSION['picId'] . "." . $_SESSION['picExt'];
                 }
 
-                header("location: profile.php");
+                header("Location: profile.php");
                 exit();
             } else {
                 $_SESSION['message'] = "Invalid User Credentials!";
-                header("location: error.php");
+                header("Location: error.php");
                 exit();
             }
         } else {
             $_SESSION['message'] = "Invalid User Credentials!";
-            header("location: error.php");
+            header("Location: error.php");
             exit();
         }
         
@@ -107,7 +113,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     <form method="post" action="login.php">
         <div class="row uniform 50%">
             <div class="7u$">
-                <input type="text" name="uname" id="uname" value="" placeholder="UserName" style="width:80%" required/>
+                <input type="text" name="uname" id="uname" value="" placeholder="Username" style="width:80%" required/>
             </div>
             <div class="7u$">
                 <input type="password" name="pass" id="pass" value="" placeholder="Password" style="width:80%" required/>
@@ -118,8 +124,8 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
             <div class="3u 12u$(small)"> 
                 <select id="category" name="category">
                     <option value="1">Farmer</option>
-                    <!-- <option value="0">Buyer</option> -->
-                </select>	
+                    <option value="0">Buyer</option>
+                </select>    
             </div>
         </div>
         <center>

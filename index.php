@@ -105,6 +105,9 @@ if (isset($_GET['pid'])) {
 				<section id="two" class="  style2 align-center">
 				<div class="container">
 				<?php
+				// Check if the farmer is logged in
+
+
 					if(!isset($_GET['type']) OR $_GET['type'] == "all")
 					{
 					 	$sql = "SELECT * FROM fproduct WHERE 1";
@@ -150,9 +153,9 @@ if (isset($_GET['pid'])) {
                           
 
                            <a href="addToCart.php?pid=<?php echo $row['pid']; ?>" class="btn custom-btn btn-primary">Product Detail</a>
-							<a href="productEdit.php?pid=<?php echo $row['pid']; ?>" class="btn custom-btn btn-secondary">Edit</a>
-							<a href="deleteproduct.php?pid=<?php echo $row['pid']; ?>" class="btn custom-btn btn-danger">Delete</a>
-
+							<!-- <a href="productEdit.php?pid=<?php echo $row['pid']; ?>" class="btn custom-btn btn-secondary">Edit</a>
+							<a href="deleteproduct.php?pid=<?php echo $row['pid']; ?>" class="btn custom-btn btn-secondary">Delete</a>
+ -->
 
 
 
