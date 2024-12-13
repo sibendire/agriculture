@@ -50,9 +50,8 @@
             max-width: 800px;
             margin: 50px auto;
             background-color: #fff;
-            border-radius: 12px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            padding: 40px;
+            padding: 20px;
         }
 
         .profile-header {
@@ -92,7 +91,7 @@
         .btn-custom {
             font-size: 16px;
             padding: 12px 20px;
-            border-radius: 30px;
+            border-radius: 5px;
             width: 100%;
         }
 
@@ -115,6 +114,7 @@
             background-color: #c82333;
             border-color: #bd2130;
         }
+      
     </style>
 </head>
 
@@ -143,16 +143,16 @@
         </div>
 
         <div class="row">
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <a href="profileEdit.php" class="btn btn-primary btn-custom btn-primary-custom">Edit Profile</a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <a href="uploadProduct.php" class="btn btn-primary btn-custom btn-primary-custom">Upload Product</a>
             </div>
-            <div class="col-md-4">
-                <a href="dashboard.php" class="btn btn-primary btn-custom btn-primary-custom">Home</a>
+            <div class="col-md-3">
+                <a href="dashboard.php" class="btn btn-primary btn-custom btn-primary-custom">My records</a>
             </div>
-            <div class="col-md-4">
+            <div class="col-md-3">
                 <a href="Login/logout.php" class="btn btn-danger btn-custom btn-danger-custom">Log Out</a>
             </div>
         </div>
